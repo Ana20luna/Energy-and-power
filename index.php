@@ -31,7 +31,7 @@
             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#conslta libros.php">Libro</a>
+            <a class="nav-link" href="#conslta libros.php">Libros</a>
           <li class="nav-item">
             <a class="nav-link" href="#Servicios">Servicios</a>
           </li>
@@ -82,13 +82,13 @@
 
   <!-- La carta -->
   <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="Menú">
-    <h2 class="titulo">La Carta</h2>
+    <h2 class="titulo">Novedades</h2>
     <div class="col">
       <div class="card">
-        <img src="imagenes/Img 6.jpg" class="card-img-top" alt="...">
+        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/d1/93/d193f26e4a808e88ff0a23e55bea4d2a.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Hamburguesa</h5>
-          <p class="card-text">Pollo,Cerdo y Res</p>
+          <h5 class="card-title">Grandes Juicios de la Historia</h5>
+          <p class="card-text">Disponible</p>
           <a href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!" class="btn btn-primary">Pedir</a>
         </div>
       </div>
@@ -97,10 +97,10 @@
 
     <div class="col">
       <div class="card">
-        <img src="imagenes/Img 3.jpg" class="card-img-top" alt="...">
+        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/2a/2b/2a2b983ea5c91c318be33295fccbd4e5.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Pizza</h5>
-          <p class="card-text">Hawaiana,Pepperoni,Mixda,Pollo, 4 quesos y Jamon y tosineta</p>
+          <h5 class="card-title">El Abogado de la Mafia</h5>
+          <p class="card-text">Disponible</p>
           <a href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!" class="btn btn-primary"
             target="_blank">Pedir</a>
         </div>
@@ -109,11 +109,11 @@
 
     <div class="col">
       <div class="card">
-        <img src="imagenes/Img 4.jpg" class="card-img-top" alt="...">
+        <img src="https://images.cdn1.buscalibre.com/fit-in/360x360/64/75/64757328931fdd11e40ac0c459018f8b.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <h5 class="card-title">De los Delitos y de las Penas</h5>
+          <p class="card-text">Disponible
+            </p>
           <a href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!" class="btn btn-primary"
             target="_blank">Pedir</a>
         </div>
@@ -122,11 +122,11 @@
 
     <div class="col">
       <div class="card">
-        <img src="imagenes/Img 5.jpg" class="card-img-top" alt="...">
+        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/cf/5b/cf5b3c38320d44389627949806ff7839.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <h5 class="card-title">Al final Mueren los dos</h5>
+          <p class="card-text">Disponible
+            </p>
           <a href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!" class="btn btn-primary"
             target="_blank">Pedir</a>
         </div>
@@ -135,11 +135,11 @@
 
     <div class="col">
       <div class="card">
-        <img src="imagenes/Img 9.jpg" class="card-img-top" alt="...">
+        <img src="https://images.cdn1.buscalibre.com/fit-in/360x360/a6/67/a66742b33042f121e4c0366e7a3ee38b.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <h5 class="card-title">El Mapa de los Anhelos</h5>
+          <p class="card-text"> Disponible
+            </p>
           <a href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!" class="btn btn-primary"
             target="_blank">Pedir</a>
         </div>
@@ -147,11 +147,11 @@
     </div>
     <div class="col">
       <div class="card">
-        <img src="imagenes/Img 7.jpg" class="card-img-top" alt="...">
+        <img src="https://images.cdn3.buscalibre.com/fit-in/360x360/b2/4c/b24c90004f9de910f18b314933bbb0ff.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <h5 class="card-title">El Principito</h5>
+          <p class="card-text"> Disponibles
+            </p>
           <a href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!" class="btn btn-primary"
             target="_blank">Pedir</a>
         </div>
@@ -165,11 +165,11 @@
     <h2 class="titulo">Servicios</h2>
     <div class="col">
       <div class="card">
-        <img src="imagenes/recetas.jpg" class="card-img-top" alt="...">
+        <img src="https://lamenteesmaravillosa.com/wp-content/uploads/2020/01/muchos-libros.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Recetas</h5>
-          <p class="card-text">Pollo,Cerdo y Res</p>
-          <a href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!" class="btn btn-primary">Pedir</a>
+          <h5 class="card-title">Libros</h5>
+          <p class="card-text">Libros mas recomendados</p>
+          <a href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!" class="btn btn-primary">Aqui</a>
         </div>
       </div>
 
@@ -177,13 +177,13 @@
 
     <div class="col">
       <div class="card">
-        <img src="imagenes/domicilio.jpg" class="card-img-top" alt="...">
+        <img src="https://www.seguridadvialenlaempresa.com/media/blog/consejos-seguridad-repartidores-coronavirus-768x520-1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Domicilio</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <p class="card-text">Contra Entrega
+            </p>
           <a href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!" class="btn btn-primary"
-            target="_blank">Pedir</a>
+            target="_blank">Pide tu libro aqui</a>
         </div>
       </div>
     </div>
