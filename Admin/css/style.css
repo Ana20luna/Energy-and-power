@@ -1,0 +1,85 @@
+/*constantes de diseño*/
+:root {
+    --colorfooter:#f3ae47;
+    --fuente: 'Oswald', sans-serif;
+}
+
+body{
+    overflow-x: hidden;/*oculta la barra horizontal*/
+}
+.logo {
+    width: 70px;
+    height: 70px;
+
+}
+
+.menu {
+    background-color: #FAB327 !important;
+
+}
+
+.alto {
+    height: 650px;
+}
+
+/*imagenes para la carta*/
+
+.card-img-top{
+    width: 100% ;
+    height:300% ;
+}
+
+#Menú .titulo{
+    width: 100%;
+    text-align: center;
+}
+
+/*Servicios*/
+#Servicios{
+    background-color: #FAB327;
+}
+
+#Servicios .titulo{
+    width: 100%;
+    text-align: center
+}
+
+/*Contacto*/
+section{
+    width: 100%;
+    background-color: antiquewhite !important;
+}
+
+#Contacto{
+    width: 100%;
+    text-align: center
+}
+
+#Contacto input,textarea{
+    width: 600px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#Contacto.tituloC{
+    color:#FAB327;
+}
+
+section.tituloC{
+    padding: 180px;
+}
+
+/*opitimizar los titulos en espacio*/
+#Menú,#Servicios,section, h2{
+    padding-top: 120px;
+
+}
+
+/*footer*/
+footer{
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    color: aliceblue;
+    padding: 15px 0;
+}
