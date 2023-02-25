@@ -1,3 +1,22 @@
+<?php
+//funciona para iniciar login o actualizar buffer
+ob_start();
+
+?>
+
+<?php
+// //utilizar el archivo conexion.php
+// include_once 'Admin/conexion.php'
+// //sincronizar la base de datos con una funcion
+// $conm = mysqli_connect($host,$user,$pw,$db)
+// //control para confirmar el cliente
+// if(isset($_SESSION['idcliente'])){
+//     header(location:'index.php');
+// }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,38 +66,44 @@
     </div>
   </nav>
 
-  <!-- Slide -->
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="Admin/Imagenes/Niño leyendo.jpg" class="d-block w-100 alto" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="Admin/Imagenes/leer.jpg" class="d-block w-100 alto " alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="Admin/Imagenes/leer 2.jpg" class="d-block w-100 alto" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+   <!--info-->
+   <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="libros">
+   <h2 class="titulo">Libros</h2>
+    <table class="table table-stiped">
+            <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            </tr>
+        </thead>
+    <tbody>
+            <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            </tr>
+            <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            </tr>
+            <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+            </tr>
+    </tbody>
+    </table>
+
+      
+   </div>
+
+
+
 
   <!-- La carta -->
   <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="Menú">
@@ -241,3 +266,6 @@
 </body>
 
 </html>
+<?php
+ob_end_flush ();
+?>
