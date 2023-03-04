@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>AdminLTE 3 | Dashboard </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -267,6 +267,21 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
+
+  <?php
+  //libros
+ if($modulo =="libros"){
+  include_once "consultalibros.php";
+ }
+  //clientes
+  if($modulo =="cliente"){
+  include_once "consultalibros.php";
+ }
+  //usuarios
+  if($modulo =="usuario"){
+  include_once "consultalibros.php";
+ }
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2023 <a href="#">Ana Luna</a>.</strong>
