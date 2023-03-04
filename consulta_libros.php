@@ -86,7 +86,7 @@ ob_start();
       //preparar el array de imprimir n datos while
       $result = mysqli_query($conm,$sql);
       //estructura de loop para imprimir n datos while
-      while ($rom= mysqli_fetch_assoc($result)){
+      while ($rom = mysqli_fetch_assoc($result)){
 
       ?>
       <tr>
