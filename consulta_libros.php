@@ -117,7 +117,7 @@ ob_start();
       //crear la conexion a la bd
       $conm = mysqli_connect($host,$user,$pw,$db);
       //crear una consulta a la base de datos 
-      $sql = "SELECT * FROM libros;";
+      $sql = "SELECT * FROM clientes;";
       //preparar el array de imprimir n datos while
       $result = mysqli_query($conm,$sql);
       //estructura de loop para imprimir n datos while
@@ -126,13 +126,13 @@ ob_start();
       ?>
       <tr>
       
+      <td><?php echo $rom ['idcliente']?></td>
+      <td><?php echo $rom ['identificación']?></td>
+      <td><?php echo $rom ['tipoidentificacion']?></td>
       <td><?php echo $rom ['nombre']?></td>
-      <td><?php echo $rom ['isbn']?></td>
-      <td><?php echo $rom ['precio']?></td>
+      <td><?php echo $rom ['apellido']?></td>
+      <td><?php echo $rom ['email']?></td>
 
-      <td><?php echo "<img src='admin/".$rom['imagen']."' 
-      width='50' height='50'>";""?></td>
-      <td><?php echo $rom ['descripcion']?></td>
         
       </tr>
       <?php
