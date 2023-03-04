@@ -14,8 +14,6 @@ ob_start();
 //     header(location:'index.php');
 // }
 
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,6 +77,30 @@ ob_start();
             </tr>
         </thead>
     <tbody>
+    <?php
+      include_once "admin/conexion.php"
+      //crear la conexion a la bd
+      $conm = mysqli_connect($host,$user,$pw,$db);
+      //crear una consulta a la base de datos 
+      $sql = "SELECT * FROM libros;";
+      //preparar el array de imprimir n datos while
+      while ($rom= mysqli_fetch_assoc($result)){
+
+      ?>
+      <tr>
+      
+      <td><?php each row ['nombre']?></td>
+      <td><?php each row ['isbn']?></td>
+      <td><?php each row ['precio']?></td>
+
+      <td><?php each row "<img src='admin/".$row['imagen']>"' 
+      width="50" height="50">";""?></td>
+      <td><?php echo $row ['descripcion']?></td>
+        
+      </tr>
+      <?php
+     }
+  
             <tr>
             <th scope="row">1</th>
             <td>Mark</td>
