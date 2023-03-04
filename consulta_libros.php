@@ -4,16 +4,6 @@ ob_start();
 
 ?>
 
-<?php
-// //utilizar el archivo conexion.php
-// include_once 'Admin/conexion.php'
-// //sincronizar la base de datos con una funcion
-// $conm = mysqli_connect($host,$user,$pw,$db)
-// //control para confirmar el cliente
-// if(isset($_SESSION['idcliente'])){
-//     header(location:'index.php');
-// }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,21 +54,21 @@ ob_start();
     </div>
   </nav>
 
-   <!--info-->
+   <!-- info
    <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="libros">
    <h2 class="titulo">Libros</h2>
     <table class="table table-stiped">
             <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">nombre</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">imagen</th>
+            <th scope="col">descripcion</th>
             </tr>
         </thead>
     <tbody>
     <?php
-      include_once "admin/conexion.php"
+      include_once "conexion.php";
       //crear la conexion a la bd
       $conm = mysqli_connect($host,$user,$pw,$db);
       //crear una consulta a la base de datos 
@@ -91,39 +81,68 @@ ob_start();
       ?>
       <tr>
       
-      <td><?php each row ['nombre']?></td>
-      <td><?php each row ['isbn']?></td>
-      <td><?php each row ['precio']?></td>
+      <td><?php echo $rom ['nombre']?></td>
+      <td><?php echo $rom ['isbn']?></td>
+      <td><?php echo $rom ['precio']?></td>
 
-      <td><?php each row "<img src='admin/".$row['imagen']>"' 
-      width="50" height="50">";""?></td>
-      <td><?php echo $row ['descripcion']?></td>
+      <td><?php echo "<img src='admin/".$rom['imagen']."' 
+      width='50' height='50'>";""?></td>
+      <td><?php echo $rom ['descripcion']?></td>
         
       </tr>
       <?php
      }
+
+     ?>
   
+    </tbody>
+    </table> -->
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 p-5" id="libros">
+   <h2 class="titulo">clientes</h2>
+    <table class="table table-stiped">
+            <thead>
             <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="col">idcliente</th>
+            <th scope="col">identificación</th>
+            <th scope="col">tipoidentificacion</th>
+            <th scope="col">nombre</th>
+            <th scope="col">apellido</th>
+            <th scope="col">email</th>
             </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-            </tr>
+        </thead>
+    <tbody>
+    <?php
+      include_once "conexion.php";
+      //crear la conexion a la bd
+      $conm = mysqli_connect($host,$user,$pw,$db);
+      //crear una consulta a la base de datos 
+      $sql = "SELECT * FROM libros;";
+      //preparar el array de imprimir n datos while
+      $result = mysqli_query($conm,$sql);
+      //estructura de loop para imprimir n datos while
+      while ($rom = mysqli_fetch_assoc($result)){
+
+      ?>
+      <tr>
+      
+      <td><?php echo $rom ['nombre']?></td>
+      <td><?php echo $rom ['isbn']?></td>
+      <td><?php echo $rom ['precio']?></td>
+
+      <td><?php echo "<img src='admin/".$rom['imagen']."' 
+      width='50' height='50'>";""?></td>
+      <td><?php echo $rom ['descripcion']?></td>
+        
+      </tr>
+      <?php
+     }
+
+     ?>
+  
     </tbody>
     </table>
 
-      
    </div>
 
 
