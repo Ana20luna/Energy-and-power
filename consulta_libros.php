@@ -13,7 +13,7 @@ ob_start();
 // if(isset($_SESSION['idcliente'])){
 //     header(location:'index.php');
 // }
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,6 +84,8 @@ ob_start();
       //crear una consulta a la base de datos 
       $sql = "SELECT * FROM libros;";
       //preparar el array de imprimir n datos while
+      $result = mysqli_query($conm,$sql);
+      //estructura de loop para imprimir n datos while
       while ($rom= mysqli_fetch_assoc($result)){
 
       ?>
