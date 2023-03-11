@@ -1,3 +1,22 @@
+<?php
+session_start();
+//cerrar sesión
+session_regenerate_id(true);
+if(isset($_REQUEST['sesion']) && $_REQUEST['sesion']=="salir"){
+  session_destroy();
+  header("location:index.php");
+}
+
+if(isset($_SESSION['idusuario'])==false){
+    header("location:index.php");
+}
+
+$modulo =$_REQUEST['modulo'] ?? '';
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,14 +67,31 @@
         <a href="#" class="nav-link">Contact</a>
       </li>
     </ul>
-
+   
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
+
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item   dropdown">
+        <a class="nav-link" title= "Editar Usuario" href="panel.php?    modulo=editarUsuario&idusuario=<?php echo $_SESSION['idusuario'];?>">
+        <i class="fas fa-user"></i>
+       </a>
+
+      </li>
+
+
+
+        <!-- Notificacions Dropdown Menu-->
+
+      <li class="nav-item   dropdown">
+        <a class="nav-link" title= "Salir" href="panel.php?modulo=&sesion=salir">
+        <i class="fas fa-sign-out-alt"></i>
+       </a>
+
+      </li>
+          
+        
         <div class="navbar-search-block">
           <form class="form-inline">
             <div class="input-group input-group-sm">
@@ -213,22 +249,25 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                usuarios
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="panel.php?modulo=usuarios" 
+                class="nav-link <?php echo ($modulo="usuarios"|| $modulo="crearUsuario" ||$modulo="editarUsuario")?" active":" ";?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p>Usuarios</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+
+              <a href="panel.php?modulo=libros" 
+                class="nav-link <?php echo ($modulo="libros"|| $modulo="crearlibro" ||$modulo="editarlibros")?" active":" ";?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
+                  <p>Libros</p>
+               </a>
               </li>
               <li class="nav-item">
                 <a href="./index3.html" class="nav-link">
@@ -266,24 +305,41 @@
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
+  
+  <?php 
 
-  <?php
+//usuarios
+if($modulo =="usuario"){
+include_once "consultausuarios.php";
+}
+
+if($modulo =="usuario"){
+  include_once "crearusuarios.php";
+  }
+
+if($modulo =="usuario"){
+  include_once "editarusuarios.php";
+  }
+
+
+
+
+
+
   //libros
  if($modulo =="libros"){
   include_once "consultalibros.php";
  }
-  //clientes
+  /*clientes
   if($modulo =="cliente"){
   include_once "consultalibros.php";
- }
-  //usuarios
-  if($modulo =="usuario"){
-  include_once "consultalibros.php";
- }
-
+ }*/
+ 
+ ?>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
+  <footer 
+  
+  class="main-footer">
     <strong>Copyright &copy; 2023 <a href="#">Ana Luna</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
