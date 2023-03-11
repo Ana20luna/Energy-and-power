@@ -16,85 +16,60 @@
 </head>
 
 <body>
-  <!-- menú -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light menu">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.php"><img src="Admin/Imagenes/Logo.png" alt="Logo rich seasoning food"
-          class="logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto me-2">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="consulta_libros.php">Libros</a>
-          <li class="nav-item">
-            <a class="nav-link" href="#Servicios">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Contacto">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn-danger " href="https://wa.me/3043685787?text=%C2%A1Haz%20tu%20pedido%20aqu%C3%AD!"
-              tabindex="-1">¡Haz tu pedido!</a>
-          </li>
-        </ul>
-      </div>
+
+<?php
+    //verificar si existe el usuario
+    if (isset($_REQUEST['login'])) {
+      session_start();
+      $email = $_REQUEST['email'] ?? '';
+      $clave = $_REQUEST['clave'] ?? '';
+      $clave =md5($clave);
+      
+      //consultar
+      include_once "conexion.php";
+      $conn = mysqli_connect($host, $user, $pw, $db);
+      $sql = "SELECT * FROM usuarios WHERE email ='".$email."' and clave = '".$clave."'; ";
+      
+      //resultado de la peticion de consulta
+      $result = mysqli_query($conn, $sql);
+      $row = mysqli_fetch_array($result);
+      
+      //si el usuario es correcto, va ir a la pagina del panel adaministrador
+      if($row){
+        $_SESSION['idusuario'] = $row['idusuario'];
+        $_SESSION['nombre'] = $row['nombre'];
+        $_SESSION['email'] = $row['email'];
+        
+        header("Location:panel.php");
+      }else{
+        ?>
+    <div class="alert alert-danger" role="alert">
+        <strong>Error en login <img src="images/Error.svg.png" width="50" alt=""></strong>
+
     </div>
-  </nav>
+    <?php
+       }
+      }
+    ?>
 
 
-
-  <!-- Servicios -->
-  <div class="row row-cols-1 row-cols-md-2 g-4 p-5" id="Servicios">
+  <!-- Iniciar Sesion -->
+  <div class="row row-cols-1 row-cols-md-1 g-4 p-5" id="login">
     <h2 class="titulo">Login</h2>
-
-    <form class="row g-3">
+    
+    <form class="row g-3" method="post"> 
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4">
+    <input type="email" class="form-control" id="inputEmail4" name="email">
   </div>
-  <div class="col-md-6">
+  <div class="col-md-12">
     <label for="inputPassword4" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword4">
+    <input type="password" class="form-control" id="inputPassword4" name="clave">
   </div>
+  
+
   <div class="col-12">
-    <label for="inputAddress" class="form-label">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress2" class="form-label">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">City</label>
-    <input type="text" class="form-control" id="inputCity">
-  </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-    </select>
-  </div>
-  <div class="col-md-2">
-    <label for="inputZip" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button type="submit" class="btn btn-primary" name="login" >Sign in</button>
   </div>
 </form>
 
@@ -129,7 +104,7 @@
 
   <!--footer-->
   <footer class="cover">
-    &copy;2023,Todos los derechos reservados Restaurante Rich seasoning foot, Crado por:<a href="#" target="_blank"> Ana Blandón</a>
+    &copy;2023,Todos los derechos reservados Libreria, Crado por:<a href="#" target="_blank"> Ana Blandón</a>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
